@@ -1,0 +1,85 @@
+/* menu.css */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#restaurantDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#info h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+#info h5 {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+}
+
+#rating {
+  font-size: 24px;
+  color: #f90;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+li h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+li p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+li button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f90;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #f60;
+}

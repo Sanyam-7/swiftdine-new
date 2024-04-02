@@ -1,0 +1,50 @@
+<!-- menu.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="/stylesheets/menu.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="maindiv">
+        <div id="restaurantDetail">
+          <div id="info">
+            <h1><%= restaurant.name %></h1>
+            <h5><%= restaurant.cuisine %></h5>
+            <h5><%= restaurant.location %> <%= restaurant.distance %> km</h5>
+            <!-- Add more details here as needed -->
+          </div>
+          <div id="rating">
+            <!-- Your rating display -->
+          </div>
+        </div>
+        <hr />
+        <div id="timediv">
+          <!-- Your time and cost details -->
+        </div>
+      </div>
+      <ul>
+        <% restaurant.menu.forEach(item => { %>
+        <li>
+          <h3><%= item.name %></h3>
+          <p><%= item.description %></p>
+          <p>Price: <%= item.price %></p>
+          <form action="/menu/add-to-cart" method="POST">
+            <input
+              type="hidden"
+              name="restaurantId"
+              value="<%= restaurant.id %>"
+            />
+            <input type="hidden" name="itemId" value="<%= item.id %>" />
+            <button type="submit">Add to Cart</button>
+          </form>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </body>
+</html>

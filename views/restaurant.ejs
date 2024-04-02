@@ -1,0 +1,39 @@
+<!-- restaurant.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant List</title>
+    <link rel="stylesheet" href="/stylesheets/restaurant.css" />
+    <!-- Assuming your CSS file is named 'restaurant.css' -->
+  </head>
+  <body>
+    <div id="main2">
+      <h1>Restaurant List</h1>
+      <div id="main_container">
+        <% restaurants.forEach(restaurant => { %>
+        <div id="container1">
+          <div
+            style="background-image: url('<%= restaurant.image %>')"
+            id="cart1"
+          >
+            <h1 style="margin-top: 0px"><%= restaurant.off %></h1>
+          </div>
+          <h1><%= restaurant.name %></h1>
+          <h4><%= restaurant.cuisine %></h4>
+          <h4><%= restaurant.location %> <%= restaurant.distance %> km</h4>
+          <button
+            type="button"
+            onclick="window.location.href='/menu/<%= restaurant.id %>';"
+          >
+            Menu
+          </button>
+        </div>
+
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>

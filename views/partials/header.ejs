@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <% if(nav===true) {%>
+    <nav
+      style="
+        background-color: transparent;
+        margin-bottom: 0;
+        border: none;
+        border-radius: 0;
+      "
+      class="navbar navbar-default"
+    >
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar-brand">Swift Dine</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="home"><a href="/home">HOME</a></li>
+          <li id="about"><a href="/about">ABOUT US</a></li>
+          <li id="contact"><a href="/login"> USER LOGIN</a></li>
+          <li id="compose"><a href="/restaurant">RESTAURANT LOGIN</a></li>
+          <li><a href="/checkout">CHECKOUT</a></li>
+          <a
+            class="px-3 py-2 bg-red-700 mt-20px text-white rounded-lg"
+            href="/logout"
+            >Logout</a
+          >
+        </ul>
+        >
+      </div>
+    </nav>
+
+    <% } %>
+  </body>
+</html>

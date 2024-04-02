@@ -1,0 +1,32 @@
+<%- include('header') -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="location.css">
+    <script type="text/javascript">
+        function Redirect() {
+          location.href = "/restaurant";
+        }
+      </script>
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+           <h1>Cooking gone wrong ?</h1>
+           <h2>Order food from favourite restaurant near you.</h2>
+           <div id="location">
+            <input id="map" type="text" name="location" placeholder="Enter the location">
+            <i id="icon" class="ri-focus-3-line">Locate_me</i>
+            <button onclick="Redirect();">Find Food</button>
+           </div>
+           <h3>Popular Cities Of India</h3>
+        </div>
+        <div id="right">
+        </div>
+    </div>
+</body>
+</html>

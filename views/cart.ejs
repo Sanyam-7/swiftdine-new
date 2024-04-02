@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="/stylesheets/cart.css" />
+  </head>
+  <body>
+    <h1>Your Food</h1>
+    <ul>
+      <% let totalCost = 0; %> <% cart.forEach((item, index) => { %> <%
+      totalCost += item.price; %>
+      <li>
+        <h3><%= item.name %></h3>
+        <p>Price: <%= item.price %></p>
+        <form action="/cart/remove-item" method="POST">
+          <input type="hidden" name="index" value="<%= index %>" />
+          <button type="submit">Remove</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+    <p>Total Cost: <%= totalCost %></p>
+
+    <!-- Payment selection options -->
+    <form action="/place-order" method="POST">
+      <input
+        type="hidden"
+        name="restaurantId"
+        value="<%= cart.length > 0 ? cart[0].restaurantId : '' %>"
+      />
+      <input
+        type="hidden"
+        name="items"
+        value="<%= JSON.stringify(cart.map(item => ({ name: item.name, price: item.price }))) %>"
+      />
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required /><br /><br />
+      <label id="payment" for="">Payment</label>
+      <img hidden id="Qr" src="WhatsApp Image 2024-03-01 at 09.38.39_f9c2a09b.jpg" alt="">
+
+      <!-- Proceed to Checkout button -->
+      <button type="submit">Place Order</button>
+    </form>
+
+    <!-- Button to add more items -->
+    <% if (cart.length > 0) { %>
+    <form action="/menu/<%= cart[0].restaurantId %>" method="GET">
+      <button type="submit">Add More Items</button>
+    </form>
+    <% } %>
+    <!-- <script>
+      var payment = document.querySelector("payment")
+      var qr = document.querySelector('qr')
+      payment.addEventListener('click', () => {
+        qr.styles.
+      })
+    </script> -->
+  </body>
+</html>

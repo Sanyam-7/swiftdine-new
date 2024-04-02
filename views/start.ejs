@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="start.css" />
+    <script type="text/javascript">
+      function Redirect() {
+        location.href = "/home";
+      }
+    </script>
+  </head>
+
+  <body>
+    <video autoplay loop muted src="1.mp4"></video>
+    <div id="main">
+      <div id="image">
+        <div class="heading">
+          <h1>ENJOY YOUR FOOD</h1>
+        </div>
+        <div id="button">
+          <button onclick="Redirect();">GET STARTED</button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      gsap.from("#img1", {
+        opacity: 0,
+        duration: 1,
+        y: 60,
+      });
+      gsap.from(".heading h1", {
+        delay: 0.8,
+        opacity: 0,
+        duration: 1,
+      });
+      gsap.from("#button button", {
+        delay: 1,
+        opacity: 0,
+        duration: 1,
+        y: 60,
+      });
+    </script>
+  </body>
+</html>
